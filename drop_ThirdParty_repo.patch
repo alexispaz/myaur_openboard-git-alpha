@@ -1,6 +1,21 @@
-diff -Naur OpenBoard-1.5.3/libs.pri OpenBoard-1.5.3-new/libs.pri
---- OpenBoard-1.5.3/libs.pri	1970-01-01 01:00:00.000000000 +0100
-+++ OpenBoard-1.5.3-new/libs.pri	2019-04-12 14:26:16.566266531 +0200
+diff --git a/OpenBoard.pro b/OpenBoard.pro
+index 8798e432..411c30f7 100644
+--- a/OpenBoard.pro
++++ b/OpenBoard.pro
+@@ -46,7 +46,7 @@ QT += core
+ 
+ INCLUDEPATH += src
+ 
+-include($$THIRD_PARTY_PATH/libs.pri)
++include(libs.pri)
+ include(src/adaptors/adaptors.pri)
+ include(src/api/api.pri)
+ include(src/board/board.pri)
+diff --git a/libs.pri b/libs.pri
+new file mode 100644
+index 00000000..cb49c257
+--- /dev/null
++++ b/libs.pri
 @@ -0,0 +1,72 @@
 +
 +linux-g++ {
@@ -74,15 +89,3 @@ diff -Naur OpenBoard-1.5.3/libs.pri OpenBoard-1.5.3-new/libs.pri
 +}
 +
 +
-diff -Naur OpenBoard-1.5.3/OpenBoard.pro OpenBoard-1.5.3-new/OpenBoard.pro
---- OpenBoard-1.5.3/OpenBoard.pro	2019-04-10 09:04:25.000000000 +0200
-+++ OpenBoard-1.5.3-new/OpenBoard.pro	2019-04-12 14:26:34.289438050 +0200
-@@ -45,7 +45,7 @@
- 
- INCLUDEPATH += src
- 
--include($$THIRD_PARTY_PATH/libs.pri)
-+include(libs.pri)
- include(src/adaptors/adaptors.pri)
- include(src/api/api.pri)
- include(src/board/board.pri)

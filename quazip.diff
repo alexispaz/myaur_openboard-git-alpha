@@ -1,19 +1,31 @@
---- OpenBoard-1.5.3/OpenBoard.pro	2019-04-10 09:04:25.000000000 +0200
-+++ OpenBoard-1.5.3-quazip/OpenBoard.pro	2019-04-12 08:54:40.265598779 +0200
-@@ -71,9 +71,7 @@
+diff --git a/OpenBoard.pro b/OpenBoard.pro
+index 8798e432..a0a4abf7 100644
+--- a/OpenBoard.pro
++++ b/OpenBoard.pro
+@@ -71,6 +71,9 @@ include(src/pdf-merger/pdfMerger.pri)
+ include(plugins/plugins.pri)
  INCLUDEPATH += plugins/cffadaptor/src
  
- #ThirdParty
--DEPENDPATH += $$THIRD_PARTY_PATH/quazip/
--INCLUDEPATH += $$THIRD_PARTY_PATH/quazip/
--include($$THIRD_PARTY_PATH/quazip/quazip.pri)
++#ThirdParty
 +INCLUDEPATH += /usr/include/quazip5/
- 
++
  FORMS += resources/forms/mainWindow.ui \
     resources/forms/preferences.ui \
---- OpenBoard-1.5.3/plugins/cffadaptor/UBCFFAdaptor.pro	2019-04-10 09:04:25.000000000 +0200
-+++ OpenBoard-1.5.3-quazip/plugins/cffadaptor/UBCFFAdaptor.pro	2019-04-12 08:53:45.622844493 +0200
-@@ -39,7 +38,7 @@
+    resources/forms/brushProperties.ui \
+@@ -434,7 +437,7 @@ linux-g++* {
+     #LIBS += -lprofiler
+     LIBS += -lX11
+     LIBS += -lquazip5
+-    INCLUDEPATH += "/usr/include/quazip"
++    INCLUDEPATH += "/usr/include/quazip5"
+ 
+     LIBS += -lpoppler
+     INCLUDEPATH += "/usr/include/poppler"
+diff --git a/plugins/cffadaptor/UBCFFAdaptor.pro b/plugins/cffadaptor/UBCFFAdaptor.pro
+index f8214d5d..315d72e3 100644
+--- a/plugins/cffadaptor/UBCFFAdaptor.pro
++++ b/plugins/cffadaptor/UBCFFAdaptor.pro
+@@ -39,7 +39,7 @@ macx:{
      QMAKE_POST_LINK += bash postScript_mac.sh "$$DESTDIR" "$$SANKORE_DIR/$$BUILD_DIR/product/Open-Sankore.app/Contents/MacOS"
  }
  
@@ -22,7 +34,7 @@
  
  QT       += xml xmlpatterns core
  QT       += gui
-@@ -51,9 +50,7 @@
+@@ -51,9 +51,7 @@ DEFINES += NO_THIRD_PARTY_WARNINGS
  
  INCLUDEPATH += src
  
